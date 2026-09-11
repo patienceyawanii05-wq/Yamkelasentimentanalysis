@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-surface-light-border dark:border-surface-dark-border;
+  }
+
+  body {
+    @apply bg-surface-light-subtle text-slate-800 dark:bg-surface-dark dark:text-slate-200;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-300 dark:bg-slate-700;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-600;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-surface-light-border bg-surface-light p-6 shadow-sm dark:border-surface-dark-border dark:bg-surface-dark-subtle;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-surface-light-border bg-surface-light px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:bg-surface-light-subtle active:scale-[0.98] dark:border-surface-dark-border dark:bg-surface-dark dark:text-slate-200 dark:hover:bg-surface-dark-subtle;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-surface-light-subtle dark:text-slate-400 dark:hover:bg-surface-dark-subtle;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-surface-light-border bg-surface-light px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 transition-colors focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20 dark:border-surface-dark-border dark:bg-surface-dark dark:text-slate-200 dark:placeholder:text-slate-500;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+}
